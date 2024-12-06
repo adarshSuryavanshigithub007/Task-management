@@ -8,7 +8,7 @@
                 "field_type": "email",
                 "field_placeholder": "Enter your email",
                 "field_required": true,
-                "function":"ValidEmailId"
+                "function": "ValidEmailId"
             },
             {
                 "field_id": "password",
@@ -16,7 +16,7 @@
                 "field_type": "password",
                 "field_placeholder": "Enter your password",
                 "field_required": true,
-                "function":"validatePassword"
+                "function": "validatePassword"
             }
         ]
     }

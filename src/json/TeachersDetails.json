@@ -1,0 +1,64 @@
+[
+    {
+        "page_label": "Teachers details Form",
+        "field": [
+            {
+                "field_id": "name",
+                "field_label": "Name",
+                "field_placeholder": "Enter your Name",
+                "field_required": true,
+                "field_type": "text"
+            },
+            {
+                "field_id": "last_name",
+                "field_label": "Last Name",
+                "field_placeholder": "Enter your Last Name",
+                "field_required": true,
+                "field_type": "text"
+            },
+            {
+                "field_id": "gender",
+                "field_label": "Select Gender",
+                "field_type": "select",
+                "options": [
+                    {
+                        "label": "Male",
+                        "value": "male"
+                    },
+                    {
+                        "label": "Female",
+                        "value": "female"
+                    }
+                ],
+                "required": true
+            },
+            {
+                "field_id": "age",
+                "field_label": "Age",
+                "field_placeholder": "Enter your Age",
+                "field_required": true,
+                "field_type": "number"
+            },
+            {
+                "field_id": "photo",
+                "field_label": "Upload your Photo",
+                "field_required": true,
+                "field_type": "file"
+            },
+            {
+                "field_id": "phone_number",
+                "field_label": "Phone Number",
+                "field_type": "tel",
+                "field_placeholder": "Enter your phone number",
+                "field_required": true
+            },
+            {
+                "field_id": "address",
+                "field_label": "Address",
+                "field_type": "text",
+                "field_placeholder": "Enter your Current Address",
+                "field_required": true
+            }
+        ]
+    }
+]
