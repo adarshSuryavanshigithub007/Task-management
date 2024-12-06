@@ -1,34 +1,34 @@
-import React, { useState } from 'react';
-import teachersJson from '../../json/TeachersDetails.json';
-import DynamicForm from '../../components/forms/DynamicForm';
+import React, { useState } from "react";
+import teachersJson from "../../json/TeachersDetails.json";
+import DynamicForm from "../../components/forms/DynamicForm";
 
 console.log(teachersJson);
 
 const AddTeacher = () => {
   const [formData, setFormData] = useState({
-    name: '',
-    last_name: '',
-    gender: '',
-    age: '',
-    photo: '',
-    phone_number: '',
-    address: ''
+    name: "",
+    last_name: "",
+    gender: "",
+    age: "",
+    photo: "",
+    phone_number: "",
+    address: "",
   });
   const elements = teachersJson[0] || {};
   console.log(elements);
-  const pageLabel = elements.page_label || 'No Label Available';
+  const pageLabel = elements.page_label || "No Label Available";
   const fields = elements.field || [];
   const handleInputChange = (fieldName, value) => {
     console.log(value);
     console.log(fieldName);
     setFormData((prevData) => ({
       ...prevData,
-      [fieldName]: value
+      [fieldName]: value,
     }));
   };
   const handleSubmit = (event) => {
     event.preventDefault(); // Prevent default form submission
-    console.log('Form Submitted:', formData);
+    console.log("Form Submitted:", formData);
     // Add your API call or submission logic here
   };
   return (
