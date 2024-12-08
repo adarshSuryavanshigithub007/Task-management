@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import teachersJson from "../../json/TeachersDetails.json";
 import DynamicForm from "../../components/forms/DynamicForm";
-
-console.log(teachersJson);
+import axios from "axios";
+import { fileToBase64 } from "../../utils/function/commonFunctions";
 
 const AddTeacher = () => {
   const [formData, setFormData] = useState({
@@ -10,31 +10,44 @@ const AddTeacher = () => {
     last_name: "",
     gender: "",
     age: "",
-    photo: "",
+    file: null, // File object
     phone_number: "",
     address: "",
   });
+
   const elements = teachersJson[0] || {};
-  console.log(elements);
   const pageLabel = elements.page_label || "No Label Available";
   const fields = elements.field || [];
+
   const handleInputChange = (fieldName, value) => {
-    console.log(value);
-    console.log(fieldName);
     setFormData((prevData) => ({
       ...prevData,
       [fieldName]: value,
     }));
   };
-  const handleSubmit = (event) => {
-    event.preventDefault(); // Prevent default form submission
-    console.log("Form Submitted:", formData);
-    // Add your API call or submission logic here
+ 
+  
+  const handleSubmit = async (event) => {
+    event.preventDefault();
+  
+    const dataToSubmit = { ...formData };
+    if (formData.file) {
+      dataToSubmit.file = await fileToBase64(formData.file);
+    }
+  
+    try {
+      const response = await axios.post("http://localhost:5000/users", dataToSubmit);
+      console.log(response.data);
+    } catch (error) {
+      console.error("Error submitting form:", error);
+    }
   };
+  
+
   return (
     <div>
       <div className="container m-3">
-        <div className="row  d-flex justify-content-center align-items-center">
+        <div className="row d-flex justify-content-center align-items-center">
           <div className="col-md-6">
             <div className="card">
               <h5 className="card-header bg-success text-white">{pageLabel}</h5>

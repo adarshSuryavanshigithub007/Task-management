@@ -40,7 +40,7 @@
                 "field_type": "number"
             },
             {
-                "field_id": "photo",
+                "field_id": "file",
                 "field_label": "Upload your Photo",
                 "field_required": true,
                 "field_type": "file"
