@@ -6,6 +6,7 @@ import 'bootstrap/dist/css/bootstrap.min.css'; // Already included
 // import 'bootstrap/dist/js/bootstrap.bundle.min.js'; // Import Bootstrap JS
 
 
+
 createRoot(document.getElementById('root')).render(
   <StrictMode>
     <App />

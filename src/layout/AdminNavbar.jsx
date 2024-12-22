@@ -1,9 +1,11 @@
-import React from "react";
+import React from 'react'
 import { Link } from "react-router-dom";
 
-const Navbar = () => {
+const AdminNavbar = () => {
   return (
-    <nav className="navbar navbar-expand-lg navbar-light text-white" style={{ backgroundColor: '#77dd77' }}>
+    <div>
+      
+    <nav className="navbar navbar-expand-lg navbar-light bg-body-tertiary">
       {/* Container wrapper */}
       <div className="container-fluid">
         {/* Navbar brand */}
@@ -39,17 +41,18 @@ const Navbar = () => {
               </Link>
             </li>
             <li className="nav-item">
-              <Link className="nav-link" to="/assignprojects">
-                Assign Project
+              <Link className="nav-link" to="/team">
+                Team
               </Link>
             </li>
             <li className="nav-item">
-              <Link className="nav-link" to="/task">
-                Task 
+              <Link className="nav-link" to="/projects">
+                Projects
               </Link>
             </li>
           </ul>
         </div>
+
         {/* Right elements */}
         <div className="d-flex align-items-center">
           {/* Shopping Cart Icon */}
@@ -139,7 +142,12 @@ const Navbar = () => {
         </div>
       </div>
     </nav>
-  );
-};
+  
 
-export default Navbar;
+
+
+    </div>
+  )
+}
+
+export default AdminNavbar
