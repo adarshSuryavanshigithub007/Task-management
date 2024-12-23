@@ -1,7 +1,23 @@
-import React from "react";
+import React, { useState } from "react";
+import Model from "../../components/Model";
 // import 'bootstrap/dist/css/bootstrap.min.css';
 
 const AssignProjects = () => {
+
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  // const [selectedTask, setSelectedTask] = useState(null);
+
+  
+  // Handle modal open
+  const openModal = () => {
+    setIsModalOpen(true);
+  };
+
+  // Handle modal close
+  const closeModal = () => {
+    setIsModalOpen(false);
+  };
+
   // Extract initials from card title
   const title = "Book Management";
   const initials = title
@@ -10,7 +26,8 @@ const AssignProjects = () => {
     .join(""); // Extract initials from the title
 
   return (
-    <div className="card m-3" style={{ maxWidth: "540px" }}>
+    <div className="card m-3" style={{ maxWidth: "540px",cursor: "pointer"  }}  onClick={openModal} // Open modal on title click
+                  >
       <div className="row g-0">
         {/* Avatar section with initials */}
         <div className="col-md-4 d-flex justify-content-center align-items-center">
@@ -64,7 +81,7 @@ const AssignProjects = () => {
                     className="fas fa-info-circle"
                     style={{ fontSize: "10px" }}
                   ></i>
-                  View Task
+                  View Details
                 </span>
               </small>
               {/* Assign By */}
@@ -75,6 +92,8 @@ const AssignProjects = () => {
           </div>
         </div>
       </div>
+       {/* Modal for task details */}
+       {isModalOpen && <Model  closeModal={closeModal} />}
     </div>
   );
 };

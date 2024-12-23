@@ -66,7 +66,7 @@ const TaskManagement = () => {
               height: "auto",
             }}
           >
-           <h6 className="mt-2"> Complete</h6>
+            <h6 className="mt-2"> Complete</h6>
             <div className="card mt-3">
               <div className="card-body">
                 <h5 className="card-title">Task 1</h5>
